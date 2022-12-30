@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
@@ -18,11 +19,10 @@ public class MainConfiguration {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://postgres:5432/jobrunr_schema");
-        dataSource.setUsername("jobrunr");
-        dataSource.setPassword("root");
-
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost/jobrunrdemo?serverTimezone=Asia/Taipei&useLegacyDatetimeCode=false");
+        dataSource.setUsername("root");
+        dataSource.setPassword("SYSTEM");
         return dataSource;
     }
 

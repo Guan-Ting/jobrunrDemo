@@ -12,7 +12,7 @@ public class SampleJobService {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Recurring(id = "my-recurring-job", cron = "*/15 * * * *")
+    @Recurring(id = "my-recurring-job", cron = "0/1 * * * *")
     @Job(name = "A recurring job")
     public void recurringJob() throws InterruptedException {
         logger.info("The recurring job has begun.");
